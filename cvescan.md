@@ -14,4 +14,4 @@
         
         cat domains.txt | httprobe --prefer-https -c 50 | tee hosts.txt
 
-4. Use nuclei to find cves
+4. Use nuclei or curl or some custom tool to find cves
