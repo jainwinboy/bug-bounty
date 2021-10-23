@@ -1,16 +1,18 @@
 #!/bin/bash
 
-subfinder -silent -dL seeds.txt | tee -a sf-domains.txt
+domain=$1
+
+subfinder -silent -d $domain | tee -a sf-domains.txt
 
 echo subfinder ran first, total is $(cat sf-domains.txt | wc -l)
 
-amass enum -passive -df seeds.txt -o am-domains.txt
+amass enum -passive -d $domain -o am-domains.txt
 diff=$(cat am-domains.txt | anew sf-domains.txt | wc -l)
 echo amass found $diff new subs
 
 echo total is $(cat sf-domains.txt | wc -l)
 
-xargs -a seeds.txt -I@ sh -c 'assetfinder --subs-only @ | tee -a af-domains.txt'
+assetfinder --subs-only $domain | tee -a af-domains.txt
 diff=$(cat af-domains.txt | anew sf-domains.txt | wc -l)
 echo assetfinder found $diff new subs
 
