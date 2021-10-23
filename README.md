@@ -1,1 +1,1 @@
-Bug Bounty Notes
+Bug Bounty Resources
