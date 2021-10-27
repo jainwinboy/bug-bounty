@@ -2,7 +2,12 @@
 
 Sub Enum
 ========
-/path/to/getsubs.sh domain.com
+mkdir ~/amass
+cd amass
+mkdir bin
+mkdir scripts
+<!-- copy all scripts from repo to /scripts and all needed binaries from ~/go/bin to /bin -->
+amass enum -dir ~/amass -active -brute -src -d $domain
 
 MASSDNS
 =======
