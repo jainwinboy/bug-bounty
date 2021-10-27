@@ -11,7 +11,7 @@
 
         vi ~/.profile
         export GOPATH=$HOME/go
-        export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+        export PATH=$PATH:$GOROOT:$GOPATH/bin
         source ~/.profile
 
 2. Install tools for sub enum
@@ -20,6 +20,11 @@
         go install github.com/tomnomnom/assetfinder@latest
         go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
         go install github.com/tomnomnom/anew@latest
+        go install github.com/gwen001/github-subdomains@latest
+        
+        cd ~/tools
+        mkdir shosubgo && cd shosubgo
+        wget shosubgo_linux
 
 3. Install massdns
 
@@ -29,5 +34,15 @@
         git clone https://github.com/blechschmidt/massdns.git
         cd massdns
         make
+
+4. Install httpx
+
+5. Install ffuf
+
+        go install github.com/ffuf/ffuf@latest
+
+6. Install waybackurls
+
+        go install github.com/tomnomnom/waybackurls@latest
 
 
