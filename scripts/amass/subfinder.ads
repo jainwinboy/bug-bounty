@@ -1,9 +1,9 @@
-name = "assetfinder"
+name = "subfinder"
 type = "ext"
 
 function vertical(ctx, domain)
-    print("in assetfinder")
-    local cmd = output_dir(ctx) .. "/bin/assetfinder --subs-only " .. domain
+    print("in subfinder")
+    local cmd = output_dir(ctx) .. "/bin/subfinder -d " .. domain
 
     local data = assert(io.popen(cmd))
     for line in data:lines() do
